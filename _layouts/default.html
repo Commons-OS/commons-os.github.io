@@ -387,7 +387,8 @@
       <div class="nav-links">
         <a href="/about/" class="nav-link">About</a>
         <a href="/patterns/" class="nav-link patterns">⚙️ Patterns</a>
-        <a href="/lighthouses/" class="nav-link lighthouses">🗼 Lighthouses</a>
+        <a href="/context/" class="nav-link contexts">🎯 Context</a>
+        <a href="/lighthouses/" class="nav-link lighthouses">🏠 Lighthouses</a>
         <a href="/patterns/suggest/" class="nav-link">Suggest</a>
       </div>
       
@@ -409,7 +410,7 @@
     <div class="footer-container">
       <div>
         Commons OS is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a><br>
-        Stewarded by <a href="https://cloudsters.net">cloudsters</a>
+        Distributed by <a href="https://cloudsters.net">cloudsters</a>
       </div>
       <div>
         <a href="https://github.com/Commons-OS">GitHub</a> · 
@@ -529,7 +530,7 @@
       if (grouped.lighthouses.length > 0) {
         html += `
           <div class="search-results-group">
-            <div class="search-results-group-header lighthouses">🗼 Lighthouses (${grouped.lighthouses.length})</div>
+            <div class="search-results-group-header lighthouses">🏠 Lighthouses (${grouped.lighthouses.length})</div>
             ${grouped.lighthouses.map(item => `
               <a href="${item.url}" class="search-result-item">
                 <h4>${item.title}</h4>
