@@ -1,0 +1,24 @@
+title: Commons OS
+description: Building resilient cities, organizations, ecologies, and lives through proven patterns
+url: "https://commons-os.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from build
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
