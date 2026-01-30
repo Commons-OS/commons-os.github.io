@@ -9,6 +9,8 @@ title: Context Engine - Commons OS
     --context-light: #fff3e0;
     --text-dark: #333;
     --text-muted: #666;
+    --suit-purple: #7c4dff;
+    --suit-light: #ede7f6;
   }
 
   /* Hero Section */
@@ -49,6 +51,125 @@ title: Context Engine - Commons OS
     border-radius: 25px;
     font-size: 0.9em;
     font-weight: 500;
+  }
+
+  /* Commons Suit Section */
+  .suit-section {
+    background: linear-gradient(135deg, var(--suit-purple) 0%, #651fff 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .suit-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  
+  .suit-section .suit-icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+  }
+  
+  .suit-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  
+  .suit-section h2::after {
+    display: none;
+  }
+  
+  .suit-section .suit-tagline {
+    font-size: 1.3em;
+    opacity: 0.95;
+    margin-bottom: 25px;
+    font-weight: 300;
+  }
+  
+  .suit-section .suit-description {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+  
+  .suit-section .badge-live {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #4caf50;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .suit-features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+  }
+  
+  .suit-feature {
+    background: rgba(255,255,255,0.15);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .suit-feature .icon {
+    font-size: 1.5em;
+  }
+  
+  .suit-feature span {
+    font-weight: 500;
+  }
+  
+  .suit-btn {
+    display: inline-block;
+    padding: 18px 40px;
+    background: white;
+    color: var(--suit-purple);
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.15em;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  }
+  
+  .suit-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  }
+  
+  .suit-tiers {
+    margin-top: 25px;
+    font-size: 0.95em;
+    opacity: 0.8;
+  }
+  
+  .suit-tiers a {
+    color: white;
+    text-decoration: underline;
   }
 
   /* Quote Section */
@@ -287,6 +408,20 @@ title: Context Engine - Commons OS
   .home-footer a:hover {
     text-decoration: underline;
   }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .suit-features {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .suit-feature {
+      width: 100%;
+      max-width: 300px;
+      justify-content: center;
+    }
+  }
 </style>
 
 <!-- Hero Section -->
@@ -294,7 +429,40 @@ title: Context Engine - Commons OS
   <div class="engine-icon">⚙️</div>
   <h1>Context Engine</h1>
   <p class="tagline">Deep understanding of your specific situation. Patterns adapted to YOUR reality.</p>
-  <span class="badge">Coming Soon</span>
+</div>
+
+<!-- Commons Suit Section - THE MAIN FEATURE -->
+<div class="suit-section">
+  <span class="badge-live">Live Now</span>
+  <div class="suit-icon">🦸</div>
+  <h2>Commons Suit Lite</h2>
+  <p class="suit-tagline">Your AI-Powered Superpower for Engineering Commons</p>
+  <p class="suit-description">
+    The Context Engine comes to life through the Commons Suit — an AI companion that deeply understands your situation before suggesting patterns. It asks the right questions, listens with empathy, and adapts recommendations to YOUR reality.
+  </p>
+  
+  <div class="suit-features">
+    <div class="suit-feature">
+      <span class="icon">🔍</span>
+      <span>Pattern Vision</span>
+    </div>
+    <div class="suit-feature">
+      <span class="icon">🗼</span>
+      <span>Lighthouse Stories</span>
+    </div>
+    <div class="suit-feature">
+      <span class="icon">💬</span>
+      <span>Empathy-First Guidance</span>
+    </div>
+  </div>
+  
+  <a href="https://chatgpt.com/g/g-697cf6f7b42481918562acfc798f69b4-commons-suit-lite" class="suit-btn" target="_blank">
+    Try Commons Suit Lite →
+  </a>
+  
+  <p class="suit-tiers">
+    Free for everyone · <a href="https://cloudsters.net" target="_blank">Join cloudsters</a> for the full Commons Suit
+  </p>
 </div>
 
 <!-- Quote Section -->
@@ -326,41 +494,41 @@ title: Context Engine - Commons OS
   </div>
 </div>
 
-<!-- How It Will Work Section -->
+<!-- How It Works Section -->
 <div class="section">
-  <h2>How It Will Work</h2>
-  <p class="subtitle">A glimpse into the Context Engine workflow.</p>
+  <h2>How the Commons Suit Works</h2>
+  <p class="subtitle">Your conversation with the Context Engine.</p>
   
   <div class="steps-container">
     <div class="step">
       <div class="step-number">1</div>
       <div class="step-content">
-        <h3>Describe Your Context</h3>
-        <p>Answer guided questions about your organization, city, or project. Upload relevant documents. The more context you provide, the more tailored the recommendations become.</p>
+        <h3>Share Your Challenge</h3>
+        <p>Start a conversation about what you're working on — transforming your organization, building a community, planning a city project. The Commons Suit listens first, asks questions, and seeks to understand your world.</p>
       </div>
     </div>
     
     <div class="step">
       <div class="step-number">2</div>
       <div class="step-content">
-        <h3>AI Builds Your Blueprint</h3>
-        <p>The Context Engine analyzes your inputs, identifies key dimensions (size, culture, industry, maturity, constraints), and creates a contextual blueprint — a structured representation of your unique situation.</p>
+        <h3>Discover Your Context</h3>
+        <p>Through empathetic dialogue, the suit builds understanding of your unique situation: your domain (Business, Urban, Ecology, Life), your constraints, your culture, your goals. No two contexts are the same.</p>
       </div>
     </div>
     
     <div class="step">
       <div class="step-number">3</div>
       <div class="step-content">
-        <h3>Patterns Get Adapted</h3>
-        <p>Patterns from the Pattern Engine are filtered, ranked, and adapted based on your blueprint. You see which patterns are most relevant, how they've worked in similar contexts (via Lighthouse Engine), and how to adapt them to your reality.</p>
+        <h3>Receive Adapted Patterns</h3>
+        <p>Based on your context, the suit suggests patterns from the 926+ in Commons OS — not as generic prescriptions, but adapted to your reality. It shows how Lighthouses like Buurtzorg or Mondragon applied similar patterns.</p>
       </div>
     </div>
     
     <div class="step">
       <div class="step-number">4</div>
       <div class="step-content">
-        <h3>Evolve Over Time</h3>
-        <p>Your context isn't static. The Context Engine tracks changes, learns from your implementation experiences, and continuously refines its recommendations as your situation evolves.</p>
+        <h3>Iterate and Evolve</h3>
+        <p>Come back as your situation changes. The Commons Suit is a companion for your journey, not a one-time consultation. As you implement and learn, it helps you refine and adapt.</p>
       </div>
     </div>
   </div>
@@ -369,13 +537,13 @@ title: Context Engine - Commons OS
 <!-- Use Cases Section -->
 <div class="section">
   <h2>Use Cases</h2>
-  <p class="subtitle">Where Context Engine will make the biggest difference.</p>
+  <p class="subtitle">Where the Commons Suit makes the biggest difference.</p>
   
   <div class="use-cases-grid">
     <div class="use-case">
       <div class="icon">🏢</div>
       <h4>Organizational Transformation</h4>
-      <p>Transitioning to self-management? The Context Engine helps you find the right patterns for your specific organizational culture and constraints.</p>
+      <p>Transitioning to self-management? The Commons Suit helps you find the right patterns for your specific organizational culture and constraints.</p>
     </div>
     
     <div class="use-case">
@@ -387,7 +555,7 @@ title: Context Engine - Commons OS
     <div class="use-case">
       <div class="icon">🌱</div>
       <h4>Regenerative Projects</h4>
-      <p>Building a regenerative farm or restoring an ecosystem? Context Engine considers your climate, soil, existing species, and community needs.</p>
+      <p>Building a regenerative farm or restoring an ecosystem? The suit considers your climate, soil, existing species, and community needs.</p>
     </div>
     
     <div class="use-case">
@@ -400,11 +568,11 @@ title: Context Engine - Commons OS
 
 <!-- CTA Section -->
 <div class="cta-section">
-  <h2>Want to Shape the Context Engine?</h2>
-  <p>We're actively developing the Context Engine and looking for early collaborators. Join the Commons Engineers community to participate in design discussions, beta testing, and more.</p>
+  <h2>Ready to Put on the Suit?</h2>
+  <p>The Commons Suit Lite is free for everyone. For the full Commons Suit with advanced superpowers, join the cloudsters community.</p>
   <div class="buttons">
-    <a href="https://cloudsters.net" class="btn-primary" target="_blank">Join Community</a>
-    <a href="/patterns/" class="btn-secondary">Explore Patterns</a>
+    <a href="https://chatgpt.com/g/g-697cf6f7b42481918562acfc798f69b4-commons-suit-lite" class="btn-primary" target="_blank">Try Commons Suit Lite</a>
+    <a href="https://cloudsters.net" class="btn-secondary" target="_blank">Join cloudsters</a>
   </div>
 </div>
 
