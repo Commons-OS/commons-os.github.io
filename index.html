@@ -466,7 +466,7 @@ title: Commons OS - The Operating System for Commons Engineers
 <!-- Stats Bar -->
 <div class="stats-bar">
   <div class="stat">
-    <div class="circle">926</div>
+    <div class="circle" id="total-patterns-count">—</div>
     <div class="label">Patterns</div>
   </div>
   <div class="stat">
@@ -494,10 +494,10 @@ title: Commons OS - The Operating System for Commons Engineers
       <div class="engine-icon">⬡</div>
       <h3>Pattern Engine</h3>
       <p class="engine-tagline">The collective intelligence of proven solutions</p>
-      <p>926+ documented patterns organized by domain and universality. Search, explore, and discover connections between patterns that work.</p>
+      <p><span id="patterns-text-count">1,000+</span> documented patterns organized by domain and universality. Search, explore, and discover connections between patterns that work.</p>
       <div class="engine-stats">
         <div class="engine-stat">
-          <div class="engine-stat-value">926</div>
+          <div class="engine-stat-value" id="engine-patterns-count">—</div>
           <div class="engine-stat-label">Patterns</div>
         </div>
         <div class="engine-stat">
@@ -571,7 +571,7 @@ title: Commons OS - The Operating System for Commons Engineers
     <a href="/patterns/business/" class="domain-card business">
       <div class="icon-circle">🏢</div>
       <h3>Business</h3>
-      <span class="badge active">926 Patterns</span>
+      <span class="badge active" id="business-patterns-badge">— Patterns</span>
     </a>
     
     <a href="/patterns/urban/" class="domain-card urban">
@@ -648,3 +648,51 @@ title: Commons OS - The Operating System for Commons Engineers
     <a href="https://github.com/Commons-OS" target="_blank">GitHub</a>
   </p>
 </div>
+
+
+<script>
+  // Dynamic Pattern Counter
+  // Fetches counts from search indexes and updates the homepage
+  
+  async function updatePatternCounts() {
+    try {
+      // Fetch all search indexes
+      const [allPatterns, lighthouses] = await Promise.all([
+        fetch('/patterns/search-index.json').then(r => r.ok ? r.json() : []).catch(() => []),
+        fetch('/lighthouses/search-index.json').then(r => r.ok ? r.json() : []).catch(() => [])
+      ]);
+      
+      const totalPatterns = allPatterns.length;
+      const lighthouseCount = lighthouses.length;
+      
+      // Format number with comma for thousands
+      const formatNumber = (num) => num.toLocaleString();
+      
+      // Update all pattern count elements
+      const totalPatternsEl = document.getElementById('total-patterns-count');
+      const enginePatternsEl = document.getElementById('engine-patterns-count');
+      const patternsTextEl = document.getElementById('patterns-text-count');
+      const businessBadgeEl = document.getElementById('business-patterns-badge');
+      
+      if (totalPatternsEl) totalPatternsEl.textContent = formatNumber(totalPatterns);
+      if (enginePatternsEl) enginePatternsEl.textContent = formatNumber(totalPatterns);
+      if (patternsTextEl) patternsTextEl.textContent = formatNumber(totalPatterns) + '+';
+      if (businessBadgeEl) businessBadgeEl.textContent = formatNumber(totalPatterns) + ' Patterns';
+      
+      // Update lighthouse count if element exists
+      const lighthouseCountEl = document.querySelector('.stats-bar .stat:nth-child(2) .circle');
+      if (lighthouseCountEl && lighthouseCount > 0) {
+        lighthouseCountEl.textContent = lighthouseCount;
+      }
+      
+      console.log(`Pattern counts updated: ${totalPatterns} total patterns, ${lighthouseCount} lighthouses`);
+      
+    } catch (error) {
+      console.error('Failed to update pattern counts:', error);
+      // Keep placeholder values on error
+    }
+  }
+  
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', updatePatternCounts);
+</script>
