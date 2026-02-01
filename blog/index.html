@@ -1,0 +1,303 @@
+---
+layout: default
+title: Blog - Commons OS
+---
+
+<style>
+  .blog-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    margin: -40px -20px 40px -20px;
+  }
+  
+  .blog-hero .icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+  }
+  
+  .blog-hero h1 {
+    font-size: 2.5em;
+    margin: 0 0 15px 0;
+    font-weight: 300;
+    border: none;
+  }
+  
+  .blog-hero .tagline {
+    font-size: 1.2em;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Subscribe Section */
+  .subscribe-section {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+  .subscribe-section h2 {
+    font-size: 1.8em;
+    margin: 0 0 10px 0;
+    color: #166534;
+    border: none;
+  }
+  
+  .subscribe-section p {
+    color: #15803d;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+  }
+  
+  .subscribe-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .subscribe-form input[type="email"] {
+    flex: 1;
+    min-width: 250px;
+    padding: 14px 20px;
+    border: 2px solid #bbf7d0;
+    border-radius: 30px;
+    font-size: 1em;
+    transition: all 0.2s ease;
+  }
+  
+  .subscribe-form input[type="email"]:focus {
+    outline: none;
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+  }
+  
+  .subscribe-form button {
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .subscribe-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(34, 197, 94, 0.4);
+  }
+  
+  .subscribe-note {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #166534;
+  }
+  
+  .subscribe-note a {
+    color: #15803d;
+    text-decoration: underline;
+  }
+  
+  /* Blog Posts Grid */
+  .posts-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+  }
+  
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  
+  .post-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  }
+  
+  .post-card-image {
+    height: 180px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+  }
+  
+  .post-card-image.security {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+  }
+  
+  .post-card-image.patterns {
+    background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%);
+  }
+  
+  .post-card-image.community {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  }
+  
+  .post-card-content {
+    padding: 25px;
+  }
+  
+  .post-card-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-size: 0.85em;
+    color: #888;
+  }
+  
+  .post-card-category {
+    background: #f0f0f0;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  
+  .post-card-category.security {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+  
+  .post-card-category.patterns {
+    background: #e3f2fd;
+    color: #1565c0;
+  }
+  
+  .post-card-category.community {
+    background: #dcfce7;
+    color: #166534;
+  }
+  
+  .post-card h3 {
+    font-size: 1.3em;
+    margin: 0 0 12px 0;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  .post-card p {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .post-card .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 15px;
+    color: #22c55e;
+    font-weight: 500;
+    font-size: 0.95em;
+  }
+  
+  /* Empty State */
+  .no-posts {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+  }
+  
+  .no-posts .icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+    opacity: 0.5;
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .subscribe-form {
+      flex-direction: column;
+    }
+    
+    .subscribe-form input[type="email"] {
+      min-width: 100%;
+    }
+    
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="blog-hero">
+  <div class="icon">📰</div>
+  <h1>Commons OS Blog</h1>
+  <p class="tagline">Updates, insights, and deep dives on building resilient value creation systems</p>
+</div>
+
+<!-- Subscribe Section -->
+<div class="subscribe-section">
+  <h2>Stay Updated</h2>
+  <p>Get new patterns, case studies, and insights delivered to your inbox.</p>
+  
+  <!-- Substack Subscribe Form - Replace YOUR_SUBSTACK with actual subdomain -->
+  <form class="subscribe-form" action="https://commons-os.substack.com/subscribe" method="post" target="_blank">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  
+  <p class="subscribe-note">
+    Powered by <a href="https://commons-os.substack.com" target="_blank">Substack</a> · No spam, unsubscribe anytime
+  </p>
+</div>
+
+<!-- Blog Posts -->
+<div class="posts-section">
+  <h2>📝 Latest Posts</h2>
+  
+  <div class="posts-grid">
+    {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+    {% for post in sorted_posts limit:12 %}
+    <a href="{{ post.url }}" class="post-card">
+      <div class="post-card-image {{ post.category | default: 'patterns' }}">
+        {{ post.icon | default: '📄' }}
+      </div>
+      <div class="post-card-content">
+        <div class="post-card-meta">
+          <span class="post-card-category {{ post.category | default: 'patterns' }}">{{ post.category | default: 'Update' | capitalize }}</span>
+          <span>{{ post.date | date: "%b %d, %Y" }}</span>
+        </div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        <span class="read-more">Read more →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  
+  {% if site.posts.size == 0 %}
+  <div class="no-posts">
+    <div class="icon">📝</div>
+    <h3>Coming Soon</h3>
+    <p>We're preparing our first posts. Subscribe above to be notified when we publish!</p>
+  </div>
+  {% endif %}
+</div>
