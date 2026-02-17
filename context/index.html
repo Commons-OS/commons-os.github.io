@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Context Engine - Commons OS
+title: Context — Commons Engineering
 ---
 
 <style>
   :root {
-    --context-orange: #ff9800;
-    --context-light: #fff3e0;
+    --brand-blue: #2a6496;
+    --brand-light-blue: #e9f1f7;
     --text-dark: #333;
     --text-muted: #666;
     --suit-purple: #7c4dff;
@@ -17,8 +17,8 @@ title: Context Engine - Commons OS
   .hero {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
-    color: white;
+    background: var(--brand-light-blue);
+    color: var(--text-dark);
     margin: -40px -20px 40px -20px;
   }
   
@@ -35,7 +35,7 @@ title: Context Engine - Commons OS
   
   .hero .tagline {
     font-size: 1.4em;
-    color: rgba(255,255,255,0.9);
+    color: var(--text-light);
     margin-bottom: 30px;
     font-weight: 300;
     max-width: 700px;
@@ -47,7 +47,7 @@ title: Context Engine - Commons OS
   .hero .badge {
     display: inline-block;
     padding: 8px 20px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(42, 100, 150, 0.1);
     border-radius: 25px;
     font-size: 0.9em;
     font-weight: 500;
@@ -56,7 +56,7 @@ title: Context Engine - Commons OS
   /* Commons Suit Section */
   .suit-section {
     background: linear-gradient(135deg, var(--suit-purple) 0%, #651fff 100%);
-    color: white;
+    color: var(--text-dark);
     border-radius: 20px;
     padding: 50px 40px;
     margin: 40px 0;
@@ -168,14 +168,14 @@ title: Context Engine - Commons OS
   }
   
   .suit-tiers a {
-    color: white;
+    color: var(--text-dark);
     text-decoration: underline;
   }
 
   /* Quote Section */
   .quote-section {
-    background: var(--context-light);
-    border-left: 5px solid var(--context-orange);
+    background: var(--brand-light-blue);
+    border-left: 5px solid var(--brand-blue);
     padding: 30px 35px;
     margin: 40px 0;
     border-radius: 0 12px 12px 0;
@@ -272,12 +272,12 @@ title: Context Engine - Commons OS
   .step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    background: var(--brand-light-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--text-dark);
     font-size: 1.5em;
     font-weight: 700;
     flex-shrink: 0;
@@ -331,8 +331,8 @@ title: Context Engine - Commons OS
 
   /* CTA Section */
   .cta-section {
-    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
-    color: white;
+    background: var(--brand-light-blue);
+    color: var(--text-dark);
     border-radius: 16px;
     padding: 50px 40px;
     text-align: center;
@@ -340,7 +340,7 @@ title: Context Engine - Commons OS
   }
   
   .cta-section h2 {
-    color: white;
+    color: var(--text-dark);
     margin-bottom: 20px;
   }
   
@@ -374,7 +374,7 @@ title: Context Engine - Commons OS
   
   .cta-section .btn-primary {
     background: white;
-    color: #f57c00;
+    color: var(--brand-blue);
   }
   
   .cta-section .btn-primary:hover {
@@ -383,8 +383,8 @@ title: Context Engine - Commons OS
   }
   
   .cta-section .btn-secondary {
-    border: 2px solid white;
-    color: white;
+    border: 1px solid var(--brand-blue);
+    color: var(--text-dark);
   }
   
   .cta-section .btn-secondary:hover {
@@ -401,7 +401,7 @@ title: Context Engine - Commons OS
   }
   
   .home-footer a {
-    color: var(--context-orange);
+    color: var(--brand-blue);
     text-decoration: none;
   }
   
@@ -425,10 +425,11 @@ title: Context Engine - Commons OS
 </style>
 
 <!-- Hero Section -->
-<div class="hero">
-  <div class="engine-icon">⚙️</div>
+<div class="hero-section">
+  <div class="hero-content">
+    <div class="hero-icon">🎯</div>
   <h1>Understand Your Context</h1>
-  <p class="tagline">Every living system is unique. Before you can find the right patterns, you must understand the forces at play in your specific situation.</p>
+  <p class="hero-subtitle">Every living system is unique. Before you can find the right patterns, you must understand the forces at play in your specific situation.</p>
 </div>
 
 <!-- Commons Suit Section - THE MAIN FEATURE -->
@@ -577,10 +578,4 @@ title: Context Engine - Commons OS
 </div>
 
 <!-- Footer -->
-<div class="home-footer">
-  <p>
-    Commons OS is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC-BY-SA-4.0</a><br>
-    Distributed by <a href="https://cloudsters.net" target="_blank">cloudsters</a> · 
-    <a href="https://github.com/Commons-OS" target="_blank">GitHub</a>
-  </p>
-</div>
+
