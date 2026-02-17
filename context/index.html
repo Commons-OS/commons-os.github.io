@@ -10,8 +10,6 @@ title: Context — Commons Engineering
     --text-dark: #2c3e50;
     --text-light: #5a738e;
     --border-color: #e6e9ed;
-    --suit-purple: #8e44ad;
-    --suit-light: #f9f2ff;
   }
 
   .hero-section {
@@ -33,9 +31,9 @@ title: Context — Commons Engineering
   }
 
   .hero-content .hero-subtitle {
-    font-size: 1.3em;
+    font-size: 1.25em;
     color: var(--text-light);
-    max-width: 750px;
+    max-width: 720px;
     margin: 0 auto;
     line-height: 1.7;
   }
@@ -44,9 +42,8 @@ title: Context — Commons Engineering
     padding: 70px 20px;
   }
 
-  .bg-white {
-    background: white;
-  }
+  .bg-white { background: white; }
+  .bg-light { background: #f9fafb; }
 
   .container {
     max-width: 1100px;
@@ -59,65 +56,61 @@ title: Context — Commons Engineering
   }
 
   .section-header h2 {
-    font-size: 2.2em;
+    font-size: 2em;
     color: var(--text-dark);
     margin-bottom: 15px;
   }
 
   .section-header p {
-    font-size: 1.15em;
+    font-size: 1.1em;
     color: var(--text-light);
     max-width: 700px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .suit-section {
-    background: var(--suit-light);
-    border-radius: 12px;
-    padding: 60px 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+    background: var(--brand-light-blue);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 50px 40px;
+    max-width: 750px;
+    margin: 0 auto;
   }
 
-  .suit-content h2 {
-    font-size: 2em;
-    color: var(--suit-purple);
-    margin-bottom: 20px;
+  .suit-section h2 {
+    font-size: 1.8em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
   }
 
-  .suit-content p {
+  .suit-section p {
     font-size: 1.1em;
     line-height: 1.8;
     color: var(--text-light);
     margin-bottom: 30px;
   }
 
-  .suit-image {
-    text-align: center;
-  }
-
-  .suit-image img {
-    max-width: 100%;
-    border-radius: 8px;
-  }
-
   .btn-primary {
-    background: var(--suit-purple);
+    display: inline-block;
+    background: var(--brand-blue);
     color: white;
     padding: 14px 32px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
+    font-size: 1em;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: #1e4a70;
   }
 
   .steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
   }
 
   .step {
@@ -125,23 +118,33 @@ title: Context — Commons Engineering
     padding: 30px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
+    text-align: center;
   }
 
   .step .step-number {
-    font-size: 1.5em;
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--brand-light-blue);
     color: var(--brand-blue);
+    font-size: 1.3em;
+    font-weight: 700;
     margin-bottom: 15px;
   }
 
   .step h3 {
-    font-size: 1.3em;
+    font-size: 1.2em;
+    color: var(--text-dark);
     margin: 0 0 10px 0;
   }
 
   .step p {
     color: var(--text-light);
     line-height: 1.7;
+    font-size: 0.95em;
   }
 </style>
 
@@ -149,36 +152,31 @@ title: Context — Commons Engineering
   <div class="hero-content">
     <div class="hero-icon">🔍</div>
     <h1>Capture Your Context</h1>
-    <p class="hero-subtitle">Every living system is unique. Before you can find the right patterns, you must understand the forces at play in your specific situation. The Commons Suit is a conversational partner designed to help you do just that.</p>
+    <p class="hero-subtitle">Every living system is unique. Before you can find the right patterns, you need to understand the forces at play in your specific situation.</p>
   </div>
 </div>
 
 <div class="page-section bg-white">
   <div class="container">
     <div class="suit-section">
-      <div class="suit-content">
-        <h2>Meet the Commons Suit Lite</h2>
-        <p>This is not a search engine. It’s an empathetic listener. Start a conversation about your challenge, and the Commons Suit will help you articulate your context, discover underlying tensions, and find patterns that resonate with your reality.</p>
-        <a href="https://chatgpt.com/g/g-697cf6f7b42481918562acfc798f69b4-commons-suit-lite" class="btn-primary" target="_blank">Start a Conversation</a>
-      </div>
-      <div class="suit-image">
-        <!-- Placeholder for an image of the Commons Suit in action -->
-      </div>
+      <h2>Meet the Commons Suit Lite</h2>
+      <p>This is not a search engine. It's a conversational partner. Share your challenge, and the Commons Suit will help you articulate your context, discover underlying tensions, and find patterns that resonate with your reality.</p>
+      <a href="https://chatgpt.com/g/g-697cf6f7b42481918562acfc798f69b4-commons-suit-lite" class="btn-primary" target="_blank">Start a Conversation</a>
     </div>
   </div>
 </div>
 
-<div class="page-section">
+<div class="page-section bg-light">
   <div class="container">
     <div class="section-header">
       <h2>How It Works</h2>
-      <p>A simple, four-step dialogue to move from ambiguity to clarity.</p>
+      <p>A simple dialogue to move from ambiguity to clarity.</p>
     </div>
     <div class="steps-grid">
       <div class="step">
         <div class="step-number">1</div>
         <h3>Share Your Challenge</h3>
-        <p>Start a conversation about what you’re working on—transforming your organization, building a community, planning a city project.</p>
+        <p>Start a conversation about what you're working on — transforming your organization, building a community, planning a city project.</p>
       </div>
       <div class="step">
         <div class="step-number">2</div>
