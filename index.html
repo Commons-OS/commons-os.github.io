@@ -1,51 +1,265 @@
---- 
+---
 layout: default
-title: Commons — A Discipline for Building Living Systems
---- 
+title: Commons — The Home for Building Living Systems
+---
 
 <style>
   :root {
     --brand-blue: #2a6496;
-    --brand-light-blue: #e9f1f7;
+    --brand-light-blue: #f4f8fa;
     --brand-green: #468847;
-    --text-dark: #333;
-    --text-light: #555;
-    --border-color: #ddd;
+    --text-dark: #2c3e50;
+    --text-light: #5a738e;
+    --border-color: #e6e9ed;
   }
 
   .hero-section {
     background: var(--brand-light-blue);
     text-align: center;
-    padding: 60px 20px;
-  }
-
-  .hero-content .hero-icon {
-    font-size: 3em;
-    color: var(--brand-green);
-    margin-bottom: 15px;
+    padding: 80px 20px 60px;
   }
 
   .hero-content h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     color: var(--text-dark);
     font-weight: 600;
-    margin: 0 0 15px 0;
+    margin: 0 0 20px 0;
   }
 
   .hero-content .hero-subtitle {
-    font-size: 1.2em;
+    font-size: 1.25em;
+    color: var(--text-light);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .page-section {
+    padding: 70px 20px;
+  }
+
+  .bg-white { background: white; }
+  .bg-light { background: #f9fafb; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    font-size: 2em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+  }
+
+  .section-header p {
+    font-size: 1.1em;
     color: var(--text-light);
     max-width: 700px;
-    margin: 0 auto 30px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Narrative prose */
+  .narrative {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .narrative p {
+    font-size: 1.1em;
+    color: var(--text-light);
+    line-height: 1.85;
+    margin-bottom: 25px;
+  }
+
+  /* Triple Diamond */
+  .triple-diamond-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: start;
+    gap: 25px;
+    margin-top: 10px;
+  }
+
+  .diamond-step {
+    text-align: center;
+  }
+
+  .diamond-step .icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--brand-blue);
+  }
+
+  .diamond-step h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3em;
+    color: var(--text-dark);
+  }
+
+  .diamond-step p {
+    font-size: 0.95em;
+    color: var(--text-light);
+    margin: 0 0 15px 0;
     line-height: 1.6;
   }
 
-  .hero-cta a {
+  .diamond-step a {
     text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 6px;
     font-weight: 500;
-    margin: 0 10px;
+    color: var(--brand-blue);
+    font-size: 0.95em;
+  }
+
+  .diamond-arrow {
+    font-size: 2em;
+    color: #ccc;
+    margin-top: 35px;
+  }
+
+  /* Domain cards */
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+  }
+
+  .domain-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+
+  a.domain-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(42,100,150,0.1);
+  }
+
+  .domain-card .icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+
+  .domain-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+    color: var(--text-dark);
+  }
+
+  .domain-card p {
+    color: var(--text-light);
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+  }
+
+  .domain-card .badge {
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #eee;
+    color: #999;
+  }
+
+  .domain-card .badge.active {
+    background: var(--brand-green);
+    color: white;
+  }
+
+  /* Offer grid */
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+  }
+
+  .offer-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+
+  a.offer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(42,100,150,0.1);
+  }
+
+  .offer-card .icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+
+  .offer-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+    color: var(--text-dark);
+  }
+
+  .offer-card p {
+    color: var(--text-light);
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+  }
+
+  .offer-card .badge {
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #eee;
+    color: #999;
+  }
+
+  .offer-card .badge.active {
+    background: var(--brand-green);
+    color: white;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-section p {
+    font-size: 1.1em;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .cta-buttons a {
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
     transition: all 0.3s ease;
   }
 
@@ -53,6 +267,7 @@ title: Commons — A Discipline for Building Living Systems
     background: var(--brand-blue);
     color: white;
   }
+
   .btn-primary:hover {
     background: #1e4a70;
   }
@@ -62,192 +277,150 @@ title: Commons — A Discipline for Building Living Systems
     color: var(--brand-blue);
     border: 1px solid var(--brand-blue);
   }
+
   .btn-secondary:hover {
-    background: rgba(42, 100, 150, 0.1);
+    background: rgba(42,100,150,0.05);
   }
 
-  .page-section {
-    padding: 60px 20px;
-  }
-
-  .bg-light {
-    background: #f9f9f9;
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .section-header h2 {
-    font-size: 2em;
-    color: var(--text-dark);
-    margin-bottom: 10px;
-  }
-
-  .section-header p {
-    font-size: 1.1em;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .triple-diamond {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    align-items: start;
-  }
-
-  .diamond-step {
-    text-align: center;
-    padding: 20px;
-  }
-
-  .diamond-icon {
-    font-size: 2.5em;
-    margin-bottom: 15px;
-  }
-
-  .diamond-step h3 {
-    font-size: 1.4em;
-    margin: 0 0 10px 0;
-  }
-
-  .diamond-step p {
-    color: var(--text-light);
-    line-height: 1.6;
-  }
-
-  .diamond-step a {
-    color: var(--brand-blue);
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 15px;
-    display: inline-block;
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    text-align: center;
-  }
-
-  .stat-item h3 {
-    font-size: 2.5em;
-    color: var(--brand-blue);
-    margin: 0;
-  }
-
-  .stat-item p {
-    color: var(--text-light);
-    margin-top: 5px;
-  }
-
-  .cta-section {
-    background: var(--brand-blue);
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 8px;
-  }
-
-  .cta-section h2 {
-    margin: 0 0 15px 0;
-  }
-
-  .cta-section p {
-    max-width: 500px;
-    margin: 0 auto 25px;
-    opacity: 0.9;
-  }
-
-  .cta-section a {
-    background: white;
-    color: var(--brand-blue);
+  @media (max-width: 768px) {
+    .triple-diamond-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .diamond-arrow { display: none; }
+    .hero-content h1 { font-size: 2em; }
   }
 </style>
 
+<!-- P: Hero — Recognition, not accusation -->
 <div class="hero-section">
   <div class="hero-content">
-    <div class="hero-icon">🌿</div>
     <h1>The Home for Building Living Systems</h1>
-    <p class="hero-subtitle">A discipline for those who see the connections, feel the tensions, and know there is a more vital way to build our world.</p>
-    <div class="hero-cta">
-      <a href="/patterns/" class="btn btn-primary">Explore Patterns</a>
-      <a href="https://github.com/Commons-OS" class="btn btn-secondary">View on GitHub</a>
-    </div>
+    <p class="hero-subtitle">Some systems thrive. Others just survive. The difference is rarely technology — it's design. If you've always sensed that the best organizations, communities, and ecosystems grow more like gardens than machines, you've found your place.</p>
   </div>
 </div>
 
-<div class="page-section">
-  <div class="container">
-    <div class="section-header">
-      <h2>The Discipline of Building Living Systems</h2>
-      <p>Commons Engineering is a systematic approach to designing and evolving resilient systems. It follows a simple, powerful flow.</p>
-    </div>
-    <div class="triple-diamond">
-      <div class="diamond-step">
-        <div class="diamond-icon">🎯</div>
-        <h3>1. Context</h3>
-        <p>Understand your unique situation and identify the core tensions to resolve.</p>
-        <a href="/context/">Learn More &rarr;</a>
-      </div>
-      <div class="diamond-step">
-        <div class="diamond-icon">⬡</div>
-        <h3>2. Patterns</h3>
-        <p>Find proven, reusable solutions that fit your context from a living library.</p>
-        <a href="/patterns/">Explore Patterns &rarr;</a>
-      </div>
-      <div class="diamond-step">
-        <div class="diamond-icon">🚀</div>
-        <h3>3. Build</h3>
-        <p>Bring the patterns to life and create real, observable, and vital systems.</p>
-        <a href="/patterns/build/">See Lighthouses &rarr;</a>
-      </div>
-    </div>
+<!-- A: The observation — why this matters -->
+<div class="page-section bg-white">
+  <div class="container narrative">
+    <p>The world is full of systems designed for control and predictability. But the world itself is neither controllable nor predictable. When a system can't adapt, it becomes brittle — it loses its best people, misses vital signals, and slowly decays. We keep optimizing the parts, forgetting that the health of the whole is what matters.</p>
+    <p>Commons Engineering is a different approach. It's the discipline of designing and stewarding systems that are alive, adaptive, and resilient. Not a rigid methodology, but a shared language and a growing body of knowledge for seeing, understanding, and cultivating the forces that give a system its vitality.</p>
   </div>
 </div>
 
+<!-- S: The method — Context → Pattern → Build -->
 <div class="page-section bg-light">
   <div class="container">
     <div class="section-header">
-      <h2>A Living Library of Knowledge</h2>
-      <p>This is not a static collection. It is a living system of interconnected knowledge, tended by a community of peers. It currently holds:</p>
+      <h2>How It Works</h2>
+      <p>A simple, powerful flow from understanding to action.</p>
     </div>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <h3>42</h3>
-        <p>Patterns in the Commons Blueprint</p>
+
+    <div class="triple-diamond-grid">
+      <div class="diamond-step">
+        <div class="icon">🔍</div>
+        <h3>Context</h3>
+        <p>Understand your unique situation. Identify the forces, tensions, and opportunities at play.</p>
+        <a href="/context/">Capture Context →</a>
       </div>
-      <div class="stat-item">
-        <h3>1587</h3>
-        <p>Total Patterns in the Business Domain</p>
+      <div class="diamond-arrow">→</div>
+      <div class="diamond-step">
+        <div class="icon">⬡</div>
+        <h3>Pattern</h3>
+        <p>Find proven, reusable solutions from a living library. Curated collections guide the way.</p>
+        <a href="/patterns/">Explore Patterns →</a>
       </div>
-      <div class="stat-item">
-        <h3>4</h3>
-        <p>Domains of Practice</p>
-      </div>
-      <div class="stat-item">
-        <h3>1</h3>
-        <p>Curated Collection</p>
+      <div class="diamond-arrow">→</div>
+      <div class="diamond-step">
+        <div class="icon">⬡⬡⬡</div>
+        <h3>Build</h3>
+        <p>Bring patterns to life. Create real, observable systems. Become a Lighthouse for others.</p>
+        <a href="/build/">Build Lighthouses →</a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="page-section">
+<!-- T: Where it applies — the domains -->
+<div class="page-section bg-white">
   <div class="container">
-    <div class="cta-section">
-      <h2>Become a Co-Creator</h2>
-      <p>This is a living discipline, tended by a community of peers. Help us cultivate it by suggesting new patterns or improving existing ones.</p>
-      <a href="/suggest/" class="btn btn-primary">Suggest a Pattern</a>
+    <div class="section-header">
+      <h2>Where Living Systems Matter</h2>
+      <p>Commons Engineering applies wherever complex systems need to thrive — from organizations to cities to ecosystems.</p>
+    </div>
+    <div class="domains-grid">
+      <a href="/patterns/business/" class="domain-card">
+        <div class="icon">🏢</div>
+        <h3>Business</h3>
+        <p>Organizations, governance, value streams, and the people who make them work.</p>
+        <span class="badge active">1587 Patterns</span>
+      </a>
+      <div class="domain-card">
+        <div class="icon">🏙️</div>
+        <h3>Urban</h3>
+        <p>Cities, neighborhoods, public spaces, and the infrastructure of daily life.</p>
+        <span class="badge">Coming Soon</span>
+      </div>
+      <div class="domain-card">
+        <div class="icon">🌿</div>
+        <h3>Ecology</h3>
+        <p>Regenerative ecosystems, bioregional economies, and our relationship with the living world.</p>
+        <span class="badge">Coming Soon</span>
+      </div>
+      <div class="domain-card">
+        <div class="icon">🌱</div>
+        <h3>Life</h3>
+        <p>The core patterns of living systems that underpin all other domains.</p>
+        <span class="badge">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- O: What you get -->
+<div class="page-section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2>What You'll Find Here</h2>
+      <p>An open-source commons of knowledge, tended by a community of practitioners.</p>
+    </div>
+    <div class="offer-grid">
+      <a href="/patterns/" class="offer-card">
+        <div class="icon">📚</div>
+        <h3>A Living Pattern Library</h3>
+        <p>Over 42 patterns in the Commons Blueprint collection, with more being cultivated across domains.</p>
+        <span class="badge active">Explore</span>
+      </a>
+      <a href="/context/" class="offer-card">
+        <div class="icon">🔍</div>
+        <h3>Context-Aware Guidance</h3>
+        <p>The Commons Suit helps you articulate your situation and find patterns that fit.</p>
+        <span class="badge active">Try It</span>
+      </a>
+      <a href="/build/" class="offer-card">
+        <div class="icon">⬡⬡⬡</div>
+        <h3>Real-World Lighthouses</h3>
+        <p>Organizations and communities that have brought these patterns to life.</p>
+        <span class="badge">Coming Soon</span>
+      </a>
+      <a href="https://cloudsters.net" class="offer-card" target="_blank">
+        <div class="icon">🤝</div>
+        <h3>A Community of Practice</h3>
+        <p>Connect with fellow systems thinkers who share your way of seeing the world.</p>
+        <span class="badge active">Join</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- R: Start your journey -->
+<div class="page-section bg-white">
+  <div class="container cta-section">
+    <h2>Ready to Begin?</h2>
+    <p>Whether you're transforming an organization, designing a community, or simply curious about a more vital way to build — there's a path for you.</p>
+    <div class="cta-buttons">
+      <a href="/context/" class="btn-primary">Capture Your Context</a>
+      <a href="/patterns/" class="btn-secondary">Explore the Patterns</a>
     </div>
   </div>
 </div>
