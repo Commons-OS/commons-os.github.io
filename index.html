@@ -345,7 +345,13 @@ title: Commons — The Home for Building Living Systems
     background: rgba(42,100,150,0.05);
   }
 
+  .loop-arrow {
+    margin-top: 10px;
+    text-align: center;
+  }
+
   @media (max-width: 768px) {
+    .loop-arrow { display: none; }
     .triple-diamond-grid {
       grid-template-columns: 1fr;
       gap: 30px;
@@ -366,20 +372,12 @@ title: Commons — The Home for Building Living Systems
   </div>
 </div>
 
-<!-- A: The observation — why this matters -->
-<div class="page-section bg-white">
-  <div class="container narrative">
-    <p>The world is full of systems designed for control and predictability. But the world itself is neither controllable nor predictable. When a system can't adapt, it becomes brittle — it loses its best people, misses vital signals, and slowly decays. We keep optimizing the parts, forgetting that the health of the whole is what matters.</p>
-    <p>Commons Engineering is a different approach. It's the discipline of designing and stewarding systems that are alive, adaptive, and resilient. Not a rigid methodology, but a shared language and a growing body of knowledge for seeing, understanding, and cultivating the forces that give a system its vitality.</p>
-  </div>
-</div>
-
-<!-- S: The method — Context → Pattern → Build -->
+<!-- S: The method — Context → Pattern → Build (loop) -->
 <div class="page-section bg-light">
   <div class="container">
     <div class="section-header">
       <h2>How It Works</h2>
-      <p>A simple, powerful flow from understanding to action.</p>
+      <p>A continuous loop from understanding to action — and back again.</p>
     </div>
 
     <div class="triple-diamond-grid">
@@ -404,6 +402,20 @@ title: Commons — The Home for Building Living Systems
         <a href="/build/">Build Lighthouses →</a>
       </div>
     </div>
+    <div class="loop-arrow">
+      <svg width="100%" height="40" viewBox="0 0 800 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M680 8 C 720 8, 740 20, 740 28 C 740 36, 720 40, 400 40 C 80 40, 60 36, 60 28 C 60 20, 80 8, 120 8" stroke="#ccc" stroke-width="1.5" fill="none" stroke-dasharray="6 4"/>
+        <polygon points="120,3 120,13 110,8" fill="#ccc"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- A: The observation — why this matters -->
+<div class="page-section bg-white">
+  <div class="container narrative">
+    <p>The world is full of systems designed for control and predictability. But the world itself is neither controllable nor predictable. When a system can't adapt, it becomes brittle — it loses its best people, misses vital signals, and slowly decays. We keep optimizing the parts, forgetting that the health of the whole is what matters.</p>
+    <p>Commons Engineering is a different approach. It's the discipline of designing and stewarding systems that are alive, adaptive, and resilient. Not a rigid methodology, but a shared language and a growing body of knowledge for seeing, understanding, and cultivating the forces that give a system its vitality.</p>
   </div>
 </div>
 
