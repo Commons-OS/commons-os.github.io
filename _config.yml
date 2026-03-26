@@ -22,3 +22,7 @@ defaults:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: "deck"
+    values:
+      layout: null

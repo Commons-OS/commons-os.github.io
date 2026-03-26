@@ -398,7 +398,7 @@ layout: null
       const vh = viewport.clientHeight;
       const sw = 1280;
       const sh = 720;
-      const scale = Math.min(vw / sw, vh / sh, 1);
+      const scale = Math.min(vw / sw, vh / sh);
       frame.style.transform = 'scale(' + scale + ')';
     }
 
